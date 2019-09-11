@@ -1,3 +1,55 @@
+/* font-family: 'Saira Stencil One', cursive;
+font-family: 'Titillium Web', sans-serif; */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
 .App {
   text-align: center;
 }
@@ -31,6 +83,45 @@
     transform: rotate(360deg);
   }
 }
-.pod {
-  width: 600px;
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  align-items: center;
+  background-color: #113c78;
+  color: white;
+  height: 100vh;
+}
+.App h1 {
+  font-family: 'Saira Stencil One', cursive;
+  font-size: 4rem;
+}
+.main-body {
+  width: 80%;
+  display: flex;
+}
+.column-left{
+  width:50%;
+}
+.column-right{
+  width:50%;
+  padding: 0 2rem;
+  font-family: 'Titillium Web', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.column-left .pod {
+  width: 100%;
+}
+.column-left .pod img{
+  width: 100%;
+}
+.title, .date {
+  font-size: 3rem;
+}
+.photo-exp {
+  font-size: 1.6rem;
+  padding: 1rem;
 }

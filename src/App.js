@@ -9,14 +9,17 @@ import PhotoExp from './PhotoExp';
 // import axios from 'axios';
 
 
-const APODApi = 'https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY';
+
 
 function App() {
+  const APODApi = 'https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY';
   
   const [title, setTitle] = useState('');
   const [date, setDate] = useState('');
   const [imgSrc, setImgSrc] = useState('');
   const [explanation, setExplanation] = useState('');
+
+
   
   useEffect(() => {  
     axios.get(APODApi)
@@ -25,6 +28,7 @@ function App() {
      setImgSrc(response.data.hdurl);
      setDate(response.data.date);
      setExplanation(response.data.explanation);
+     console.log(response.data);
     })
     .catch(error => {
      
@@ -36,10 +40,17 @@ function App() {
   return (
     <div className="App">
       <h1>NASA Astronomy Photo of the Day</h1>
-      <Title title={title} />
-      <Date date={date} />
-      <POD source={imgSrc} />
-      <PhotoExp explanation={explanation} />
+
+      <div className='main-body'>
+       <div className='column-left'> 
+        <POD source={imgSrc} />
+        </div>
+      <div className='column-right'>
+          <Title title={title} />
+          <Date date={date} />
+          <PhotoExp explanation={explanation} />
+      </div>
+      </div>
     </div>
   );
 
