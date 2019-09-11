@@ -113,7 +113,8 @@ table {
   justify-content: space-around;
 }
 .column-left .pod {
-  width: 100%;
+  max-width: 650px;
+  max-height: 750px;
 }
 .column-left .pod img{
   width: 100%;
