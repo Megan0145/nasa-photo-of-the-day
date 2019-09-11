@@ -1,13 +1,21 @@
-// import React from 'react';
+import React from 'react';
 
-// function DateInput(props) {
-// const currentInput=props.currentInput;
-// const setInput=props.setInput;
-// return (
-//     <div className='date-input'>
-//         <input>{currentInput}</input>
-//     </div>
-// );
-// }
+function DateInput(props) {
+    let userUpdateAPIUrl = props.userUpdateAPIUrl;
+    let userInput = document.getElementById('userinput');
 
-// export default DateInput;
+    
+
+return (
+    <div className='date-input'>
+        <input id='userinput' placeholder='Enter date in yyyy-mm-dd format'></input>
+        <button onClick={ evt => {
+            userUpdateAPIUrl(userInput.value);
+        }
+
+        }>Go</button>
+    </div>
+);
+}
+
+export default DateInput;

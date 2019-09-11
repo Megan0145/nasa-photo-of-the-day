@@ -8,9 +8,6 @@ import POD from './POD';
 import PhotoExp from './PhotoExp';
 import DateInput from "./DateInput";
 import Dropdown from "./Dropdown";
-// import axios from 'axios';
-
-
 
 
 function App() {
@@ -19,16 +16,22 @@ function App() {
   const [date, setDate] = useState('');
   const [imgSrc, setImgSrc] = useState('');
   const [explanation, setExplanation] = useState('');
-  const [currentInput, setInput] = useState('');
-  let [currentAPI, setAPI] = useState('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY');
+  let [currentAPI, setAPI] = useState('https://api.nasa.gov/planetary/apod?api_key=nS6tRh40yy8GlsPn8pu2LzRay57KsvY9nRXqDhwp');
+
+  
+  const userUpdateAPIUrl = (val) => {
+    setAPI(`https://api.nasa.gov/planetary/apod?api_key=nS6tRh40yy8GlsPn8pu2LzRay57KsvY9nRXqDhwp&date=${val}`);
+}
+
 
   const updateAPIUrl = (evtvalue) => {
     if(evtvalue === '2012-03-14') {
       setAPI(currentAPI += '&date=2012-03-14');
     } else {
-      setAPI('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY');
+      setAPI('https://api.nasa.gov/planetary/apod?api_key=nS6tRh40yy8GlsPn8pu2LzRay57KsvY9nRXqDhwp');
     }
   }
+
   
   useEffect(() => {  
     axios.get(currentAPI)
@@ -50,8 +53,8 @@ function App() {
     <div className="App">
       <h1>NASA Astronomy Photo of the Day</h1>
 
-      {/* <DateInput currentInput={currentInput} setInput={setInput} updateApiUrl={updateApiUrl}/> */}
-      <Dropdown updateAPIUrl={updateAPIUrl}/>
+      <DateInput userUpdateAPIUrl={userUpdateAPIUrl} />
+      <Dropdown updateAPIUrl={updateAPIUrl} />
 
       <div className='main-body'>
        <div className='column-left'> 

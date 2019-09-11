@@ -114,9 +114,9 @@ table {
 }
 .column-left .pod {
   max-width: 650px;
-  max-height: 750px;
 }
 .column-left .pod img{
+  max-height: 600px;
   width: 100%;
 }
 .title, .date {
@@ -125,4 +125,7 @@ table {
 .photo-exp {
   font-size: 1.6rem;
   padding: 1rem;
+}
+#userinput {
+  width: 200px;
 }

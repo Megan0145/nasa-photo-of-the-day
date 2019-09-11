@@ -9,7 +9,7 @@ return (
             updateAPIUrl(evt.target.value);
         }}>
             <option value = 'today' >Today</option>
-            <option value = '2012'>2012-03-14</option>
+            <option value = '2012-03-14'>2012-03-14</option>
         </select>
     </div>
 
