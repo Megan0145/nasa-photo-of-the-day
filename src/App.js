@@ -52,10 +52,10 @@ function App() {
   return (
     <div className="App">
       <h1>NASA Astronomy Photo of the Day</h1>
-
-      <DateInput userUpdateAPIUrl={userUpdateAPIUrl} />
-      <Dropdown updateAPIUrl={updateAPIUrl} />
-
+      <div className='updateDate'>
+        <DateInput userUpdateAPIUrl={userUpdateAPIUrl} />
+        <Dropdown updateAPIUrl={updateAPIUrl} />
+      </div>
       <div className='main-body'>
        <div className='column-left'> 
         <POD source={imgSrc} />

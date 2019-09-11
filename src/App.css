@@ -101,6 +101,30 @@ table {
   width: 80%;
   display: flex;
 }
+
+.updateDate {
+  display: flex;
+}
+.date-input, .date-dropdown{
+  margin: 1rem;
+  width: 25rem;
+}
+
+.date-dropdown select, .date-input input{
+  width: 15rem;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.date-input button {
+  width: 100px;
+  height: 21px;
+  background-color: #add8e6;
+  font-weight: bold;
+  }
+.date-input button:hover {
+  transform: scale(1.2);
+}
 .column-left{
   width:50%;
 }
@@ -125,7 +149,4 @@ table {
 .photo-exp {
   font-size: 1.6rem;
   padding: 1rem;
-}
-#userinput {
-  width: 200px;
 }
