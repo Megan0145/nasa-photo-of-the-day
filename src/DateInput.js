@@ -8,7 +8,7 @@ function DateInput(props) {
 
 return (
     <div className='date-input'>
-        <input id='userinput' placeholder='Enter date in yyyy-mm-dd format'></input>
+        <input id='userinput' placeholder='yyyy-mm-dd'></input>
         <button onClick={ evt => {
             userUpdateAPIUrl(userInput.value);
         }
