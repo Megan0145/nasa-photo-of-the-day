@@ -9,11 +9,11 @@ function DateInput(props) {
 return (
     <div className='date-input'>
         <input id='userinput' placeholder='yyyy-mm-dd'></input>
-        <button onClick={ evt => {
+        <button className='wiggle' onClick={ evt => {
             userUpdateAPIUrl(userInput.value);
         }
 
-        }>Go</button>
+        }>GO</button>
     </div>
 );
 }

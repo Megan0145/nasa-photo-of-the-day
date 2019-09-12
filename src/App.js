@@ -8,7 +8,6 @@ import POD from "./POD";
 import PhotoExp from "./PhotoExp";
 import DateInput from "./DateInput";
 import Dropdown from "./Dropdown";
-import styled from "styled-components";
 import { StyledContainer,
   StyledHeader,
   StyledH1,

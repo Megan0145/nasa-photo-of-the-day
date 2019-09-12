@@ -93,13 +93,18 @@ const StyledInputContainer = styled.div`
   .date-input button {
     width: 17vw;
     height: 2.7vw;
-    border: 1px solid grey;
     padding-left: 10px;
     border-radius: 7px;
     margin-bottom: 2vw;
     cursor: pointer;
-    background-color: #e8ebec;
+    background-color: #424242;
     font-size: 1.2rem;
+    color: white;
+    transition:all 0.25s ease;
+    /* text-shadow: 2px 2px grey; */
+    :hover {
+        opacity: 0.5;
+    }
   }
 `;
 
