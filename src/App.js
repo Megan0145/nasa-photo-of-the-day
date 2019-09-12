@@ -8,7 +8,33 @@ import POD from './POD';
 import PhotoExp from './PhotoExp';
 import DateInput from "./DateInput";
 import Dropdown from "./Dropdown";
+import styled from 'styled-components';
 
+const StyledHeader = styled.div `
+  width: 100%;
+  background-image: linear-gradient(black, #e8ebec);
+  color: white;
+  font-size: 4rem;
+  height: 8rem;
+  font-family: 'Saira Stencil One', cursive;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  img {
+    width: 80px;
+    height: 80px;
+    margin-right: 1rem;
+  }
+`;
+
+const StyledContainer = styled.div `
+  width: 50vw;
+  margin: 0 auto; 
+  border: 1px solid #e8ebec;
+  padding: 2rem;
+  background-color: white;
+`;
 
 function App() {
   
@@ -37,7 +63,7 @@ function App() {
     axios.get(currentAPI)
     .then(response => {
      setTitle(response.data.title);
-     setImgSrc(response.data.hdurl);
+     setImgSrc('https://cdn.mos.cms.futurecdn.net/Bwj8cyLCtoHd7b5V3wJbin-320-80.jpg');
      setDate(response.data.date);
      setExplanation(response.data.explanation);
      console.log(response.data);
@@ -51,21 +77,26 @@ function App() {
 
   return (
     <div className="App">
-      <h1>NASA Astronomy Photo of the Day</h1>
-      <div className='updateDate'>
-        <DateInput userUpdateAPIUrl={userUpdateAPIUrl} />
-        <Dropdown updateAPIUrl={updateAPIUrl} />
-      </div>
-      <div className='main-body'>
-       <div className='column-left'> 
-        <POD source={imgSrc} />
-        </div>
-      <div className='column-right'>
-          <Title title={title} />
-          <Date date={date} />
-          <PhotoExp explanation={explanation} />
-      </div>
-      </div>
+      <StyledHeader>
+        <img src='nasalogo.png'></img>
+        NASA Astronomy Photo of the Day
+        </StyledHeader>
+        <StyledContainer>
+          <div className='updateDate'>
+            <DateInput userUpdateAPIUrl={userUpdateAPIUrl} />
+            <Dropdown updateAPIUrl={updateAPIUrl} />
+          </div>
+          <div className='main-body'>
+            <div className='column-left'> 
+              <POD source={imgSrc} />
+            </div>
+            <div className='column-right'>
+                <Title title={title} />
+                <Date date={date} />
+                <PhotoExp explanation={explanation} />
+            </div>
+          </div>
+      </StyledContainer>
     </div>
   );
 
